@@ -1,6 +1,5 @@
-import { getUsers, qs, setValue, getCart, createEl } from "../utils";
+import { getUsers, qs, setValue, createEl } from "../utils";
 
-const formContainer = qs<HTMLDivElement>(".form-container");
 const mainEl = qs<HTMLDivElement>("main");
 const emailInput = qs<HTMLInputElement>(".email");
 const passwordInput = qs<HTMLInputElement>(".password");

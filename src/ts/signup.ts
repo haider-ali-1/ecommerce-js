@@ -1,5 +1,5 @@
 import type { User } from "../types";
-import { qs, getUsers, setValue, getCart } from "../utils";
+import { qs, getUsers, setValue } from "../utils";
 
 const nameInput = qs<HTMLInputElement>(".name");
 const emailInput = qs<HTMLInputElement>(".email");
@@ -32,6 +32,5 @@ signupBtn.addEventListener("click", (e) => {
 
   users.push(user);
   setValue("users", users);
-  window.location.href = "./login.html"
+  window.location.href = "./login.html";
 });
-
