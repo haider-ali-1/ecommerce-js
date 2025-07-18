@@ -1,0 +1,70 @@
+@import "./shared.css";
+@import "./utils.css";
+@import "./header.css";
+
+.product-container {
+  font-size: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 1rem;
+}
+
+.product-details .name {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.product-details .description {
+  font-size: 1.6rem;
+}
+
+.product-details .price {
+  font-weight: bold;
+}
+
+.product-details input {
+  border: 1px solid gray;
+  width: 10rem;
+  padding: 0.75rem;
+  padding-inline: 1rem 1.5rem;
+}
+
+.product-details .add-to-cart {
+  background-color: hsl(180, 1%, 25%);
+  color: white;
+  padding: 0.75rem;
+  border-radius: 4px;
+  border: 1px solid gray;
+}
+
+.image-wrapper img {
+  height: 54rem;
+  object-fit: contain;
+}
+
+.variations {
+  margin-block: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.variation > p {
+  font-weight: bold;
+}
+
+.variation > div {
+  display: flex;
+  gap: 1rem;
+}
+
+.variation button {
+  border: 1px solid gray;
+  padding: 0.5rem 1rem;
+}
+
+.variation .btn-variation.active {
+  background-color: hsl(180, 1%, 25%);
+  color: white;
+}

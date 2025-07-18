@@ -1,0 +1,58 @@
+@import "./shared.css";
+@import "./utils.css";
+@import "./header.css";
+
+.cart-section {
+  font-size: 1.5rem;
+  margin-block: 3rem;
+}
+
+.cart-section-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+}
+
+.summary {
+  border: 2px solid gray;
+  border-radius: 4px;
+  padding: 4rem;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border: 1px solid gray;
+  border-radius: 4px;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.cart-item img {
+  height: 7rem;
+}
+
+.cart-item input {
+  border: 1px solid gray;
+  border-radius: inherit;
+  padding-inline: 1rem;
+}
+
+.cart-item button {
+  background-color: hsl(180, 1%, 25%);
+  color: white;
+  border-radius: inherit;
+  font-size: 1.2rem;
+  padding: 0.75rem;
+}
