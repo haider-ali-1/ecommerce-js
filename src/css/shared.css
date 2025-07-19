@@ -8,3 +8,9 @@ html {
 body {
   font-family: "Open Sans", sans-serif;
 }
+
+.toast {
+  font-size: 1.5rem;
+  background: hsl(180, 1%, 25%);
+  color: white;
+}

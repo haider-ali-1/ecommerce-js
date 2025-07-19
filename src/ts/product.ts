@@ -1,3 +1,6 @@
+import Toastify from "toastify-js";
+import "toastify-js/src/toastify.css";
+
 import { getCart, getProducts, qs, setValue } from "../utils";
 import { updateCartUI } from "./shared";
 
@@ -48,6 +51,15 @@ cartBtn.addEventListener("click", () => {
 
   setValue("cart", cart);
   updateCartUI();
+  Toastify({
+    text: "Add to cart successfully",
+    className: "toast",
+    duration: 3000,
+    gravity: "top",
+    position: "right",
+    close: true,
+    backgroundColor: "hsl(180, 1%, 25%)",
+  }).showToast();
 });
 
 renderProduct();
