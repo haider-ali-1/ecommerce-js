@@ -1,0 +1,23 @@
+@import "./reset.css";
+@import "./style.css";
+@import "./header.css";
+@import "./cart-drawer.css";
+@import "./utils.css";
+@import "./footer.css";
+
+header {
+  margin-top: 0;
+  box-shadow: 0px 0px 0px 2px var(--color-border);
+  position: sticky;
+  background-color: var(--color-surface);
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
