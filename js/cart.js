@@ -1,5 +1,6 @@
 import { updateCartUI } from "./shared.js";
 import { createEl, qs, storage } from "./utils.js";
+import { getPopulatedData, updateCart, RenderSummary } from "./cart-core.js";
 
 const cartItemsDiv = qs(".cart-items");
 const summaryEl = qs(".summary");
@@ -10,43 +11,43 @@ const cartSectionContainer = qs(".cart-section-container");
 const isLoggedIn = storage.get("isLoggedIn", false);
 if (!isLoggedIn) location.href = "login.html";
 
-function getPopulatedData() {
-  const cart = storage.get("cart", []);
-  const products = storage.get("products", []);
+// function getPopulatedData() {
+//   const cart = storage.get("cart", []);
+//   const products = storage.get("products", []);
 
-  const data = cart
-    .map((ci) => {
-      const fp = products.find((p) => p.id === ci.id);
-      return fp ? { ...fp, quantity: ci.quantity } : null;
-    })
-    .filter((i) => {
-      return i !== null;
-    });
+//   const data = cart
+//     .map((ci) => {
+//       const fp = products.find((p) => p.id === ci.id);
+//       return fp ? { ...fp, quantity: ci.quantity } : null;
+//     })
+//     .filter((i) => {
+//       return i !== null;
+//     });
 
-  return data;
-}
+//   return data;
+// }
 
-function updateCart(index, value) {
-  const cart = storage.get("cart", []);
-  cart[index].quantity = value;
-  storage.set("cart", cart);
+// function updateCart(index, value) {
+//   const cart = storage.get("cart", []);
+//   cart[index].quantity = value;
+//   storage.set("cart", cart);
 
-  const populatedData = getPopulatedData();
-  const cartItem = populatedData[index];
+//   const populatedData = getPopulatedData();
+//   const cartItem = populatedData[index];
 
-  const decreaseBtn = qs(
-    `.cart-item[data-id=${cartItem.id}] button[data-action="decrease"]`
-  );
-  const price = qs(`.cart-item[data-id=${cartItem.id}] .price`);
+//   const decreaseBtn = qs(
+//     `.cart-item[data-id=${cartItem.id}] button[data-action="decrease"]`
+//   );
+//   const price = qs(`.cart-item[data-id=${cartItem.id}] .price`);
 
-  decreaseBtn.disabled = cartItem.quantity < 2;
-  price.textContent = `$${cartItem.price * value}`;
-}
+//   decreaseBtn.disabled = cartItem.quantity < 2;
+//   price.textContent = `$${cartItem.price * value}`;
+// }
 
-function RenderSummary(totalItems, totalPrice) {
-  summaryEl.innerHTML = `<p>Total Items: <span>${totalItems}</span></p>
-                       <p>Total Price: <span>$${totalPrice}</span></p>`;
-}
+// function RenderSummary(totalItems, totalPrice) {
+//   summaryEl.innerHTML = `<p>Total Items: <span>${totalItems}</span></p>
+//                        <p>Total Price: <span>$${totalPrice}</span></p>`;
+// }
 
 function RenderCartItems() {
   const cart = storage.get("cart", []);

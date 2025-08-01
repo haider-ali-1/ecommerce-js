@@ -1,4 +1,8 @@
+import { storage, qs } from "./utils.js";
+
 const links = document.querySelectorAll(".nav-items a");
+const cartEl = qs("header .cart");
+const profileEl = qs("header .profile");
 
 for (const link of links) {
   const activePageHref = location.pathname.split("/").at(-1);
@@ -8,4 +12,9 @@ for (const link of links) {
     link.classList.add("active");
     break;
   }
+}
+
+const isLoggedIn = storage.get("isLoggedIn");
+if (!isLoggedIn) {
+  [cartEl, profileEl].forEach((el) => (el.style.display = "none"));
 }

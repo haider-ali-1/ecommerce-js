@@ -23,6 +23,8 @@ if (!isUserLoggedIn) {
 logoutBtn.addEventListener("click", () => {
   storage.remove("isLoggedIn");
   storage.remove("currentUser");
+  storage.remove("orders");
+  storage.remove("cart");
   location.href = "login.html";
 });
 

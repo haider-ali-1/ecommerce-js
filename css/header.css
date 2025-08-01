@@ -107,7 +107,6 @@ li {
   }
   .main-nav {
     order: initial;
-    /* min-width: initial; */
     flex: 1;
   }
 }

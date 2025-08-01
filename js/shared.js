@@ -1,6 +1,9 @@
-import { getCart, qs } from "./utils.js";
+import { qs, storage } from "./utils.js";
 
 export function updateCartUI() {
-  const cartElement = qs(".cart span");
-  cartElement.textContent = String(getCart().length);
+  const isLoggedIn = storage.get("isLoggedIn");
+  if (isLoggedIn) {
+    const cartElement = qs(".cart span");
+    cartElement.textContent = storage.get("cart")?.length || 0;
+  }
 }
